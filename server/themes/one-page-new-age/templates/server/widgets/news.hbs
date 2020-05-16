@@ -1,0 +1,40 @@
+{{#if widget.news.length}}
+  {{#ifCond widget.layout "home"}}
+    <div class="container">
+      {{#if widget.news.length}}
+        {{#each widget.news}}
+          <div class="widget-news-item">
+            <div class="row">
+              <div class="col-md-5">
+                {{#each featuredImage}}
+                  <a href="/news/{{../id}}"><img class="img-responsive wni-featuredImage" src="{{urls.large}}"></a>
+                {{/each}}
+              </div>
+              <div class="col-md-7">
+                <h4><a href="/news/{{id}}">{{title}}</a></h4>
+                <div class="wni-about">{{{about}}}</div>
+                <a href="/news/{{id}}" class="btn btn-default">leia mais <i class="glyphicon glyphicon-link"></i></a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  {{else}}
+    {{#each widget.news}}
+      <div class="widget-news-item">
+        {{#each featuredImage}}
+          <a href="/news/{{../id}}" class="widget-news-featuredImage-link thumbnail"><img class="widget-news-featuredImage" src="{{urls.thumbnail}}"></a>
+        {{/each}}
+        <div class="widget-news-body">
+          <h4 class="news-title">
+            <a href="/news/{{id}}">{{title}}</a></h4>
+          <p>
+            {{{about}}}
+            <br><a href="/news/{{id}}">leia mais <i class="glyphicon glyphicon-link"></i></a>
+          </p>
+        </div>
+      </div>
+    {{/each}}
+  {{/ifCond}}
+{{/if}}

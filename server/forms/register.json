@@ -1,0 +1,75 @@
+{
+  "title": "auth.login.title",
+
+  "method": "post",
+  "action": "/signup",
+
+  "fields": {
+    "fullName": {
+      "type": "text",
+      "defaultValue": "",
+      "allowNull": false
+    },
+    "displayName": {
+      "type": "text",
+      "defaultValue": "",
+      "allowNull": false
+    },
+    "cpf": {
+      "type": "gov-br/cpf",
+      "defaultValue": ""
+    },
+    "passaporte": {
+      "type": "gov-br/passaporte",
+      "allowNull": true
+    },
+    "estrangeiro": {
+      "type": "gov-br/brasileiro-seletor",
+      "allowNull": false
+    },
+
+    "gender": {
+      "type": "select",
+      "allowNull": true,
+      "fieldOptions": {
+        "M": "Male",
+        "F": "Female"
+      }
+    },
+    "password": {
+      "type": "password",
+      "defaultValue": "",
+      "allowNull": false
+    },
+    "confirmPassword": {
+      "type": "password",
+      "defaultValue": "",
+      "allowNull": false
+    },
+    "email": {
+      "type": "email",
+      "defaultValue": "",
+      "allowNull": false
+    },
+    "confirmEmail": {
+      "type": "email",
+      "defaultValue": "",
+      "allowNull": false
+    },
+    "recaptcha": {
+      "type": "recaptcha"
+    }
+  },
+  "actions": {
+    "termSeparator": { "type": "break" },
+    "acceptTerms": {
+      "type": "terms-of-use",
+      "allowNull": false,
+      "defaultValue": false
+    },
+    "actionsSeparator": { "type": "break" },
+    "submit": {
+      "type": "submit"
+    }
+  }
+}

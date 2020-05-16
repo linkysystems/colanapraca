@@ -1,0 +1,7 @@
+{{#ifCond widget.layout "home"}}
+  <div class="container">
+    <div class="widget-iframe-html {{widget.configuration.align}}">{{{widget.configuration.html}}}</div>
+  </div>
+{{else}}
+  <div class="widget-iframe-html {{widget.configuration.align}}">{{{widget.configuration.html}}}</div>
+{{/ifCond}}

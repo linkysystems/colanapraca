@@ -1,0 +1,24 @@
+<div class="sidebar-module share-block">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a href="https://twitter.com/intent/tweet?url={{req.we.config.hostname}}{{data.linkPermanent}}" class="s-twitter" target="_blank">
+        <img src="/public/theme/one-page-new-age/icons/twitter.png" alt="Compartilhar no Twitter" />
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{req.we.config.hostname}}{{data.linkPermanent}}" class="s-facebook" target="_blank">
+        <img src="/public/theme/one-page-new-age/icons/facebook.png" alt="Compartilhar no Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{req.we.config.hostname}}{{data.linkPermanent}}&title={{{data.title}}}&summary={{{data.about}}}" class="s-linkedin" target="_blank">
+        <img src="/public/theme/one-page-new-age/icons/linkedin.png" alt="Compartilhar no Linkedin" />
+      </a>
+      <a href="whatsapp://send?text={{data.title}} - {{req.we.systemSettings.siteName}}: {{req.we.config.hostname}}{{data.linkPermanent}}" data-action="share/whatsapp/share" class="s-whatsapp-mobile"><img src="/public/theme/one-page-new-age/icons/whatsapp.png" alt="Compartilhar no Whatsapp" /></a>
+      <a href="https://web.whatsapp.com/send?text={{data.title}} - {{req.we.systemSettings.siteName}}: {{req.we.config.hostname}}{{data.linkPermanent}}" data-action="share/whatsapp/share" class="s-whatsapp-site" target="_blank"><img src="/public/theme/one-page-new-age/icons/whatsapp.png" alt="Compartilhar no Whatsapp" /></a>
+      <a href="mailto:?subject={{data.title}} - {{req.we.systemSettings.siteName}}&amp;body={{data.about}} - Leia mais no link: {{req.we.config.hostname}}{{data.linkPermanent}}"
+         title="Compartilhar por Email">
+        <img src="/public/theme/one-page-new-age/icons/email.png" alt="Compartilhar por e-mail">
+      </a>
+      <a href="javascript:window.print();">
+        <img src="/public/theme/one-page-new-age/icons/print.png" alt="Imprimir página" />
+      </a>
+    </div>
+  </div>
+</div>

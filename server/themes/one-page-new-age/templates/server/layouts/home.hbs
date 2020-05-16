@@ -1,0 +1,15 @@
+{{{template 'partials/slideshow'}}}
+{{!-- <section class="download bg-primary text-center" id="download">
+  <div class="container">
+    {{#region 'highlighted'}}{{/region}}
+  </div>
+</section> --}}
+
+<div id="sysMessagesArea" class="container">{{{we-messages}}}</div>
+
+<div id="content" role="main">
+{{{body}}}
+  {{#region 'content'}}{{/region}}
+</div>
+
+{{#region 'afterContent'}}{{/region}}

@@ -1,0 +1,16 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li><a href="/history">Histórias</a></li>
+  <li class="active">Criar</li>
+</ol>
+
+{{multistep-steps
+  steps=steps
+  currentStep=1
+  url=req.url
+  urlBeforeAlias=req.urlBeforeAlias
+  disableStepLink=true
+}}
+
+<h1>Qual é a sua história?</h1>
+{{{form 'history-create' data validationError action="/history/create"}}}

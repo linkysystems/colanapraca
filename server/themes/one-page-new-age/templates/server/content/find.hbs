@@ -1,0 +1,28 @@
+<div class="row contents">
+
+  <!-- Blog Post Content Column -->
+  <div class="col-lg-8">
+
+    <div class="actions">
+      {{we-action-create-btn 'content' req}}
+      {{rss-btn locals=this}}
+    </div>
+
+    {{#each data}}
+      {{render-record-teaser modelName='content' record=this locals=..}}
+      <hr>
+    {{else}}
+      <p class="contents-empty">Nenhum conteúdo foi encontrado para essa lista.</p>
+    {{/each}}
+
+    {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
+
+    {{#region 'content'}}{{/region}}
+  </div>
+
+  <div class="col-md-4">
+    {{{template 'partials/menu-sidebar'}}}
+
+    {{#region 'sidebar'}}{{/region}}
+  </div>
+</div>

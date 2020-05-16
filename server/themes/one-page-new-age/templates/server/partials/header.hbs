@@ -1,0 +1,58 @@
+{{!-- {{{template 'partials/header-topbar'}}} --}}
+<nav id="mainNav" class="navbar navbar-default {{#if req.we.systemSettings.logoUrl}}with-site-logo{{/if}}">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+        <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="/">
+        {{#if req.we.systemSettings.logoUrl}}
+          <img src="{{req.we.systemSettings.logoUrl}}"
+               alt="Logo" >
+        {{else}}
+          <img src="/public/project/logo.png" alt="Logo" >
+        {{/if}}
+        {{#if req.we.systemSettings.siteName}}
+          <span class="site-name sr-only">{{req.we.systemSettings.siteName}}</span>
+        {{/if}}
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar1">
+      {{#if req.user.id}}
+        {{#if menuAuthenticated}}
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/notification" class="main-menu-notification-link">
+                <span class="glyphicon glyphicon-bell"></span>
+                <span class="main-menu-link-notification-count badge"></span>
+                <span class="main-menu-notification-text">{{t 'notification.find'}}</span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">
+                Olá, {{req.user.displayName}} {{we-avatar id=req.user.id style='thumbnail' width="18px"}}
+              </a>
+              {{we-menu menuAuthenticated class="dropdown-menu"}}
+            </li>
+          </ul>
+        {{else}}{{we-menu userMenu class="nav navbar-nav navbar-right"}}
+        {{/if}}
+      {{else}}
+       {{!--  <ul class="nav navbar-nav navbar-right user-menu">
+          <li>
+            <a href="/login" class="login-link">
+              <span class="glyphicon glyphicon-log-in"></span> Entrar
+            </a>
+          </li>
+          <li>
+            <a href="/signup" class="signup-link">
+              <span class="glyphicon glyphicon-plus"></span> Registrar
+            </a>
+          </li>
+        </ul> --}}
+      {{/if}}
+
+      {{we-menu menuMain class="nav navbar-nav navbar-right"}}
+    </div>
+  </div>
+</nav>

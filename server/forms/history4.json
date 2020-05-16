@@ -1,0 +1,60 @@
+{
+  "method": "post",
+
+  "fields": {
+    "audioUrlGroup": {
+      "type": "field-group",
+      "title": "Audio na internet",
+      "description": "Use esse campo se o seu audio já está hospedado em algum sistema na internet",
+      "fields": {
+        "audioUrls": {
+          "type": "file/url",
+          "formFieldMultiple": true,
+          "formFieldAttributes": {
+            "label": "Audios externos",
+            "placeholder": null,
+            "help": null
+          }
+        }
+      }
+    },
+    "audioGroup": {
+      "type": "field-group",
+      "title": "Upload",
+      "description": "Use esse campo se o audio estiver em seu computador",
+      "fields": {
+        "audios": {
+          "type": "file/audio",
+          "formFieldMultiple": true,
+          "formFieldAttributes": {
+            "label": "Audio",
+            "placeholder": null,
+            "help": null
+          }
+        }
+      }
+    }
+  },
+  "actions": {
+    "previus": {
+      "type": "submit",
+      "defaultValue": "previus",
+      "formFieldAttributes": {
+        "class": "btn btn-default",
+        "label": "Voltar",
+        "placeholder": null,
+        "help": null
+      }
+    },
+    "next": {
+      "type": "submit",
+      "defaultValue": "next",
+      "formFieldAttributes": {
+        "class": "btn btn-primary",
+        "label": "Salvar e avançar",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  }
+}

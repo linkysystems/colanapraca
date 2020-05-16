@@ -1,0 +1,57 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li><a href="/group">Grupos</a></li>
+  <li><a href="/group/{{group.id}}">{{we-strip-tags text=group.name maxLength=40}}</a></li>
+  <li><a href="/group/{{group.id}}/member">Membros</a></li>
+  <li class="active">Convites</li>
+</ol>
+
+<div class="row group-invites">
+  <div class="col-lg-12">
+    <h1>Convidar para o grupo</h1>
+  </div>
+
+  <div class="col-md-8 col-lg-9">
+    {{template 'membershipinvite/search' locals=this}}
+
+    {{#if userToInvite}}
+    <form action="/group/{{group.id}}/member/invite/create" method="post">
+      <input name="userId" type="hidden" value="{{userToInvite.id}}">
+      <input name="inviterId" type="hidden" value="{{res.req.user.id}}">
+      <input name="redirectTo" type="hidden" value="{{res.req.urlBeforeAlias}}">
+
+      <div class="user-to-invite">
+        {{we-avatar id=userToInvite.id style="thumbnail"}}
+        {{userToInvite.displayName}}
+        <button class="btn btn-success">Convidar</button>
+      </div>
+    </form>
+    {{/if}}
+
+    {{#if data}}
+    <div class="group-invites">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{{t 'name'}}</th>
+            <th>{{t 'email'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{email}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+      {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
+    </div>
+    {{/if}}
+  </div>
+  <div class="col-md-4 col-lg-3">
+    {{template 'group/sidebar' locals=this}}
+  </div>
+</div>

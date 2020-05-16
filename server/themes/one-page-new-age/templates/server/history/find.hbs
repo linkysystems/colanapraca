@@ -1,0 +1,183 @@
+{{!-- <ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li class="active">Histórias</li>
+</ol>
+ --}}
+<div class="loader"></div>
+
+<div class="history-findAll">
+  <div class="history-findAll-header">
+    <h2 class="hfah-title">Vivências que viram histórias.
+      <br>{{metadata.completeCount}} histórias que inspiram.</h2>
+    <div class="history-search">
+      <form class="form-inline">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-ls-12">
+
+            <div class="form-group">
+              <label>Texto: </label>
+              <input type="text" name="q" class="form-control" placeholder="Buscar no título ou texto ..." value="{{req.query.q}}">
+              {{!-- <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span> --}}
+            </div>
+
+            <div class="form-group">
+              <label>Autor: </label>
+              <input type="text" name="creatorName_like" class="form-control" placeholder="Do autor/narrador ..." value="{{req.query.creatorName_like}}">
+              {{!-- <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span> --}}
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-ls-12 location-search-area" >
+
+            <div class="form-group location-state-f-group">
+              <label for="sHistoryLocationState">Estado:</label>
+              <select id="sHistoryLocationState" name="locationState" class="form-control">
+                <option value="{{req.query.locationState}}">{{req.query.locationState}}</option>
+              </select>
+            </div>
+
+            <script>
+            $(document).ready(function() {
+              var country = 'BR';
+
+              we.components.select.init('#sHistoryLocationState', {
+                searchField: 'name',
+                cache: true,
+                url: function () {
+                  return '/api/v1/location/' + country;
+                },
+                processResults: function (data) {
+                  if (!data || !data.lstate) return {};
+                  return {
+                    results: data.lstate.map(function(r) {
+                      return { text: r.name, id: r.code };
+                    })
+                  };
+                }
+              });
+            });
+            </script>
+
+            <div class="form-group location-city-f-group">
+              <label for="sHistoryCity">Cidade:</label>
+              <select id="sHistoryCity" name="city"
+                class="form-control">
+                  <option value="{{req.query.city}}">{{req.query.city}}</option>
+              </select>
+            </div>
+
+            <script>$(document).ready(function() {
+              function checkCityDisabled (state) {
+                if (!state) {
+                  citySelector.attr('disabled', 'disabled');
+                } else {
+                  citySelector.attr('disabled', null);
+                }
+              }
+
+              var state = $('#sHistoryLocationState')[0].value;
+              var citySelector = $('#sHistoryCity');
+
+              checkCityDisabled(state);
+
+              $('#sHistoryLocationState').change(function() {
+                state = this.value;
+                checkCityDisabled(state);
+              });
+
+              we.components.select.init('#sHistoryCity', {
+                searchField: 'name',
+                cache: true,
+                url: function () {
+                  return '/api/v1/location/BR/' + state;
+                },
+                processResults: function (data) {
+                  if (!data || !data.lcity) return {};
+                  return {
+                    results: data.lcity.map(function(r) {
+                      return { text: r.name, id: r.name };
+                    })
+                  };
+                }
+              });
+            });</script>
+          </div>
+          <div class="col-sm-12 col-md-12 col-ls-12">
+
+            <div class="form-group midia-group">
+              <strong>Mídia:</strong>
+              <div class="checkbox">
+                <label><input name="haveImage" type="checkbox" {{#if req.query.haveImage}}checked{{/if}}> Imagem
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input name="haveVideo" type="checkbox" {{#if req.query.haveVideo}}checked{{/if}}> Vídeo
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input name="haveAudio" type="checkbox" {{#if req.query.haveAudio}}checked{{/if}}> Audio
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input name="haveText" type="checkbox" {{#if req.query.haveText}}checked{{/if}}> Texto
+                </label>
+              </div>
+
+              &nbsp;<button class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  {{!-- authenticated user actions --}}
+  <div class="history-findAll-actions">
+    <a href="/history/create" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Enviar</a>
+    {{#if req.user.id}}
+      <a href="/user/{{req.user.id}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> Minhas histórias</a>
+    {{/if}}
+  </div>
+
+  <div class="row dynamic-grid">
+    {{#each data}}
+      <div class="d-col col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xg-4">
+        {{render-record-teaser modelName='history' record=this locals=..}}
+      </div>
+    {{else}}
+      <div class="col-md-12">
+        Não foi possível encontrar histórias para a lista.
+      </div>
+    {{/each}}
+  </div>
+  <div class="clearfix">
+    {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
+  </div>
+</div>
+<script>
+$(window).load(function() {
+  $('.dynamic-grid').masonry({
+    // set itemSelector so .grid-sizer is not used in layout
+    itemSelector: '.d-col',
+    // use element for option
+    columnWidth: '.d-col',
+    percentPosition: true
+  });
+
+  $('.loader').fadeOut('slow');
+});
+</script>

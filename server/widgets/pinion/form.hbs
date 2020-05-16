@@ -1,0 +1,24 @@
+<form name="widget-form-{{type}}">
+  <div class="form-group">
+    <label for="widget-form-{{type}}-title">Mensagem:</label>
+    <input name="message" value="{{configuration.message}}" type="text" class="form-control" id="widget-form-{{type}}-message" placeholder="O que o pinion está falando?">
+  </div>
+
+  <div class="form-group">
+    <label for="widget-form-{{type}}-link">Link:</label>
+    <input name="link" value="{{configuration.link}}" type="url" class="form-control" id="widget-form-{{type}}-link" placeholder="https://...">
+  </div>
+
+  Olá, eu sou o Pinion e Saúde também é meu lugar!
+
+  {{{controllFields}}}
+
+  {{#if id}}
+    <input type="hidden" name="id" value="{{id}}">
+    <button type="submit" class="btn btn-primary">{{t 'Save'}}</button>
+    <button type="submit" data-dismiss="modal" class="btn btn-default">{{t 'Cancel'}}</button>
+  {{else}}
+    <button type="submit" class="btn btn-primary">{{t 'Add'}}</button>
+    <button type="submit" data-dismiss="modal" class="btn btn-default">{{t 'Cancel'}}</button>
+  {{/if}}
+</form>

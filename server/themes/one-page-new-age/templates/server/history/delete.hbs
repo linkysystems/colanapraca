@@ -1,0 +1,15 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li><a href="/history">Histórias</a></li>
+  <li><a href="/history/{{data.id}}">{{we-strip-tags text=data.title maxLength=30}}</a></li>
+  <li class="active">Deletar</li>
+</ol>
+
+<div class="text-center">
+  <p>{{{t deleteMsg}}}</p>
+  <form method="post">
+    <a class="btn btn-default" href="{{redirectTo}}">{{t 'Return'}}</a>
+    <button class="btn btn-danger">{{t 'Delete'}}</button>
+    <input name="redirectTo" type="hidden" value="{{redirectTo}}">
+  </form>
+</div>

@@ -1,0 +1,32 @@
+image: docker:19.03.1
+
+services:
+  - docker:19.03.1-dind
+
+variables:
+  # Use TLS https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#tls-enabled
+  DOCKER_HOST: tcp://docker:2376
+  DOCKER_TLS_CERTDIR: "/certs"
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  - apk add --update curl && rm -rf /var/cache/apk/*
+
+build:
+  stage: build
+  only:
+    - tags
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME --tag $CI_REGISTRY_IMAGE:latest --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
+    - docker push $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+deploy_to_production:
+  stage: deploy
+  environment: production
+  only:
+    - tags
+  script:
+    - echo "Will notify update to '{"name":"'"$CI_REGISTRY_IMAGE"'", "tag":"'"$CI_COMMIT_REF_NAME"'"}'"
+    - curl --header "Content-Type:application/json" --request POST --data '{"name":"'"$CI_REGISTRY_IMAGE"'", "tag":"'"$CI_COMMIT_REF_NAME"'"}' $DEPLOYER_URL

@@ -1,0 +1,39 @@
+<h1>Concluir cadastro</h1>
+<p>Preencha todos os campos abaixo para concluír o seu cadastro no site.</p>
+{{form 'complete-registration' data validationError}}
+
+<script>
+  $(document).ready(function() {
+    $('input[name=cellphone]').each(function(i, el){
+       $('#'+el.id).mask('(00) 00000-0000', {
+         placeholder: '(00) 00000-0000'
+       });
+    });
+    $('input[name=phone]').each(function(i, el){
+       $('#'+el.id).mask('(00) 0000-0000', {
+         placeholder: '(00) 0000-0000'
+       });
+    });
+    function updateMask() {
+      var $element = $('#'+this.id);
+      $(this).off('blur');
+      $element.unmask();
+      if(this.value.replace(/\D/g, '').length > 10 || this.value.replace(/\D/g, '').length == 0) {
+        $element.mask('(00) 00000-0000', {
+          placeholder: '(00) 00000-0000'
+        });
+      } else {
+        $element.mask('(00) 0000-00009', {
+          placeholder: '(00) 0000-0000'
+        });
+      }
+      $(this).on('blur', updateMask);
+    }
+    $('input[name=cellphone]').on('blur', updateMask);
+    $('input[name=phone]').on('blur', updateMask);
+    $('input[name=cpf]').mask('000.000.000-00', {
+      reverse: true,
+      placeholder: '000.000.000-00'
+    });
+  });
+</script>

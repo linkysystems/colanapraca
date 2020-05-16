@@ -1,0 +1,43 @@
+<div class="user-search">
+  <form action="/user">
+    <div class="input-group">
+      <input type="text" name="displayName_contains" class="form-control" placeholder="Nome do narrador" value="{{req.query.displayName_contains}}">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+          <span class="glyphicon glyphicon-search"></span>
+      </button>
+      </span>
+    </div>
+  </form>
+</div>
+
+<div class="users text-center">
+  {{#we-grid items=data cols=6}}
+    <div class="thumbnail user-teaser-item">
+      {{#link-to 'user.findOne' id}}
+        {{#if avatar}}
+          {{we-image avatar 'medium' width="100%"}}
+        {{else}}
+          <img src="/avatar/{{id}}" width="100%">
+        {{/if}}
+      {{/link-to}}
+      <div class="caption">
+        {{#link-to 'user.findOne' id}}
+          <h4 class="user-teaser-title">
+            {{we-strip-tags text=displayName maxLength=40}}
+          </h4>
+
+          {{#if atividade.length}}
+            {{#each atividade}}
+              <div class="atividade">{{we-strip-tags text=this maxLength=40}}</div>
+            {{/each}}
+          {{/if}}
+        {{/link-to}}
+      </div>
+    </div>
+  {{/we-grid}}
+
+  {{#unless data.length}}Não temos usuários com histórias públicadas nessa lista.{{else}}
+    {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
+  {{/unless}}
+</div>

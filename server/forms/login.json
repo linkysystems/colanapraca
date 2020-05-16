@@ -1,0 +1,26 @@
+{
+  "title": "auth.login.title",
+
+  "method": "post",
+  "action": "/login",
+
+  "fields": {
+    "email": {
+      "type": "text",
+      "allowNull": false
+    },
+    "password": {
+      "type": "password",
+      "allowNull": false
+    },
+    "persistent": {
+      "type": "hidden",
+      "defaultValue": 1
+    }
+  },
+  "actions": {
+    "submit": {
+      "type": "submit"
+    }
+  }
+}

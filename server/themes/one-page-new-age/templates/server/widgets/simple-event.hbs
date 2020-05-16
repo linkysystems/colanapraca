@@ -1,0 +1,34 @@
+{{#if widget.events.length}}
+  {{#ifCond widget.layout "home"}}
+    <div class="container">
+      {{#each widget.events}}
+        {{render-record-teaser modelName='simple-event' record=this locals=../locals}}
+      {{/each}}
+    </div>
+  {{else}}
+    {{#each widget.events}}
+      <div class="widget-news-item">
+        {{#each featuredImage}}
+          <a href="/simple-event/{{../id}}" class="widget-news-featuredImage-link thumbnail"><img class="widget-news-featuredImage" src="{{urls.thumbnail}}"></a>
+        {{/each}}
+        <div class="widget-news-body">
+          <h4 class="news-title">
+            <a href="/simple-event/{{id}}">{{name}}</a></h4>
+          <p>
+            <div class="hotel-event-dates">
+              <div class="hotel-event-date">
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> <strong>{{we-date eventStartDate "DD/MM/YYYY" locals=../locals}}</strong> / <strong>{{we-date eventEndDate "DD/MM/YYYY" locals=../locals}}</strong>
+              </div>
+              <div class="hotel-event-registrationDate">
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> <strong>{{we-date registrationStartDate "DD/MM/YYYY" locals=../locals}}</strong> / <strong>{{we-date registrationEndDate "DD/MM/YYYY" locals=../locals}}</strong>
+              </div>
+            </div>
+
+            {{{about}}}
+            <br><a href="/simple-event/{{id}}">leia mais <i class="glyphicon glyphicon-link"></i></a>
+          </p>
+        </div>
+      </div>
+    {{/each}}
+  {{/ifCond}}
+{{/if}}

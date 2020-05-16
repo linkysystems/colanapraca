@@ -1,0 +1,16 @@
+{{#if widget.records.length}}
+  <div class="row">
+    {{#each widget.records}}
+      <div class="col-md-3">
+        <h4 class="displayName">
+          {{we-strip-tags text=name maxLength=150}}</h4>
+      </div>
+    {{/each}}
+
+    <div class="col-md-3">
+      <a href="/contribuidores">
+        <h4 class="displayName">Saiba mais <i class="glyphicon glyphicon-link"></i> </h4>
+      </a>
+    </div>
+  </div>
+{{/if}}

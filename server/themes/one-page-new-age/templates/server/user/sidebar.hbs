@@ -1,0 +1,28 @@
+{{#if user.id}}
+  {{we-avatar id=user.id style='medium' width="100%" class="img-thumbnail avatar"}}
+{{/if}}
+
+<h1 class="user-displayName">{{user.displayName}}</h1>
+{{#if user.atividade}}
+<div class="user-professional-activity"><i class="fa fa-briefcase" aria-hidden="true"></i>
+ {{user.atividade}}</div>
+{{/if}}
+
+{{#if user.locationText}}
+  <div class="user-location-data">
+    <i class="fa fa-map-o" aria-hidden="true"></i> {{user.locationText}}
+  </div>
+  <div class="user-location-map">
+
+  </div>
+{{/if}}
+
+<div class="user-actions">
+  {{#ifCond req.user.id user.id }}
+    <a href="/user/{{user.id}}/edit?redirectTo=/user/{{user.id}}" class="btn btn-default btn-sm" data-we-btn-action="edit"><i class="glyphicon glyphicon-edit text-info"></i> Editar</a>
+  {{else}}
+    {{we-action-edit-btn 'user' user this.req user.id redirectTo=this.req.url}}
+  {{/ifCond}}
+</div>
+
+{{#region 'profileSidebar'}}{{/region}}

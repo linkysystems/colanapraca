@@ -1,0 +1,25 @@
+{
+  "name": "one-page-new-age",
+  "private": true,
+  "version": "1.0.6",
+  "main": "theme.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "author": "Alberto Souza <contato@albertosouza.net>"
+}

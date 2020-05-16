@@ -1,0 +1,18 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li><a href="/history">Histórias</a></li>
+  <li><a href="/history/{{data.id}}">{{we-strip-tags text=data.title maxLength=30}}</a></li>
+  <li class="active">Editar</li>
+</ol>
+
+{{multistep-steps
+  steps=steps
+  currentStep=currentStep
+  url=req.url
+  urlBeforeAlias=req.urlBeforeAlias
+}}
+
+{{#if currentStepOBJ}}
+  <h1>{{currentStepOBJ.title}}</h1>
+  {{{form currentStepOBJ.form data validationError}}}
+{{/if}}

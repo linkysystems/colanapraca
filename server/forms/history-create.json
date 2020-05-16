@@ -1,0 +1,112 @@
+{
+  "method": "post",
+
+  "fields": {
+    "title": {
+      "type": "text",
+      "allowNull": false,
+      "formFieldAttributes": {
+        "label": "Dê um nome à sua história",
+        "placeholder": null,
+        "help": null
+      }
+    },
+
+
+    "keywordsGroup": {
+      "type": "field-group",
+      "title": "Palavras-chave",
+      "description": "Selecione algumas palavras relácionadas com a sua história",
+
+      "fields": {
+        "category": {
+          "type": "vocabulary/tag",
+          "vocabularyName": "Category",
+          "canCreate": false,
+          "formFieldMultiple": true,
+          "onlyLowercase": false,
+          "formFieldAttributes": {
+            "label": "Eixos",
+            "placeholder": null,
+            "help": "Selecione um eixo relácionado com sua história"
+          }
+        },
+        "tags": {
+          "type": "vocabulary/tag",
+          "vocabularyName": "Tags",
+          "canCreate": true,
+          "formFieldMultiple": true,
+          "onlyLowercase": true,
+          "formFieldAttributes": {
+            "label": "Assuntos relacionados",
+            "placeholder": null,
+            "help": "Escreva ou selecione no máximo 3 assuntos relacionados à história"
+          }
+        }
+      }
+    },
+
+    "locationGroup": {
+      "type": "field-group",
+      "title": "Localização",
+      "description": "Local mais relevante onde a história aconteceu",
+
+      "fields": {
+        "country": {
+          "type": "hidden",
+          "defaultValue": "BR",
+          "allowNull": false,
+          "formFieldAttributes": {
+            "label": null,
+            "placeholder": null,
+            "help": null
+          }
+        },
+        "locationState": {
+          "type": "location/state",
+          "allowNull": false,
+          "formCountryFieldName": "country",
+          "formFieldAttributes": {
+            "label": "Estado",
+            "placeholder": null,
+            "help": "Estado do Brasil onde a história aconteceu"
+          }
+        },
+        "city": {
+          "type": "location/city",
+          "allowNull": false,
+          "formStateFieldName": "locationState",
+          "formFieldAttributes": {
+            "label": "Cidade",
+            "placeholder": null,
+            "help": "Cidade onde a história aconteceu"
+          }
+        }
+      }
+    },
+
+    "acceptTerms": {
+      "type": "boolean",
+      "required": true,
+      "allowNull": false,
+      "defaultValue": false,
+      "formFieldAttributes": {
+        "label": "Li e aceito os <a target=\"_blank\" href=\"/terms-of-use\">Termos de Uso.</a>",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  },
+  "actions": {
+    "next": {
+      "type": "submit",
+      "defaultValue": "next",
+      "formFieldAttributes": {
+        "class": "btn btn-primary",
+        "label": "Salvar e avançar",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  }
+}

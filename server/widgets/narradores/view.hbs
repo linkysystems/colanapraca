@@ -1,0 +1,17 @@
+{{#if widget.records.length}}
+  <div class="images">
+    {{#each widget.records}}
+      <a href="{{linkPermanent}}" class="avatar-item">
+        {{#if avatar.length}}
+          {{we-image avatar "medium" class="wn-avatar-image"}}
+        {{else}}
+          <img src="/avatar/0" />
+        {{/if}}
+
+        <h4 class="displayName">{{we-strip-tags text=displayName maxLength=50}}</h4>
+        <div class="atividade">{{#each atividade}}
+        {{we-strip-tags text=this maxLength=50}}{{/each}}</div>
+      </a>
+    {{/each}}
+  </div>
+{{/if}}

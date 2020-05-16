@@ -1,0 +1,43 @@
+#weAdminBar {
+  direction: ltr;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 32px;
+  height: 32px;
+  // position: fixed;
+  // top: 33px;
+  // left: 0;
+  width: 100%;
+  z-index: 99999;
+  background: #23282d;
+
+  .nav > li {
+    display: inline-block;
+
+    > a {
+      padding: 0px 3px;
+      color: #fff;
+    }
+  }
+
+  .nav.navbar-right {
+    display: inline-block;
+    float: right;
+  }
+}
+
+#weAdminBar .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; // remove the gap so it doesn't close
+}
+
+#weAdminBar > .container > .nav > li > a:focus,
+#weAdminBar > .container > .nav > li > a:active,
+#weAdminBar > .container > .nav > li > a:hover {
+  background-color: #888;
+}
+
+#afterWeadmin {
+  // height: 32px;
+}

@@ -1,0 +1,29 @@
+{
+  "method": "post",
+
+  "fields": {
+    "body": {
+      "type": "html",
+      "allowNull": true,
+      "formFieldType": "html",
+      "formFieldHeight": 300,
+      "formFieldAttributes": {
+        "label": "Escreva aqui sua história",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  },
+  "actions": {
+    "next": {
+      "type": "submit",
+      "defaultValue": "next",
+      "formFieldAttributes": {
+        "class": "btn btn-primary",
+        "label": "Salvar e avançar",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  }
+}

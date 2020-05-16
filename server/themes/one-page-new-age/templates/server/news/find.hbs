@@ -1,0 +1,62 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li class="active">{{t "news.find"}}</li>
+</ol>
+
+<div class="row news-list">
+  <div class="col-md-8">
+    <div class="actions">
+      {{we-action-create-btn 'news' req}}
+      {{rss-btn locals=this}}
+    </div>
+    <div class="row">
+      {{#if data.length}}
+        <div class="col-sm-6">
+          {{#each data}}
+            {{#isPair @key}}
+              {{render-record-teaser modelName='news' record=this locals=..}}
+            {{else}}{{/isPair}}
+          {{/each}}
+        </div>
+        <div class="col-sm-6">
+          {{#each data}}
+            {{#isPair @key}}{{else}}
+              {{render-record-teaser modelName='news' record=this locals=..}}
+            {{/isPair}}
+          {{/each}}
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
+        </div>
+      {{else}}
+        <p class="contents-empty col-md-12">Nenhuma notícia foi encontrada para essa lista.</p>
+      {{/if}}
+    </div>
+
+    {{#region 'content'}}{{/region}}
+  </div>
+
+  <div class="col-md-4">
+    <div class="sidebar-module">
+      <div class="panel panel-default">
+        <div class="panel-heading">Buscar notícia</div>
+        <div class="panel-body">
+          <form action="/noticias">
+            <div class="input-group">
+              <input type="text" name="title_contains" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+              </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {{{template 'partials/menu-sidebar'}}}
+
+    {{#region 'sidebar'}}{{/region}}
+  </div>
+</div>

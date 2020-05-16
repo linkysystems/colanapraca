@@ -1,0 +1,59 @@
+{
+  "method": "post",
+  "fields": {
+    "videoUrlGroup": {
+      "type": "field-group",
+      "title": "Vídeo na internet",
+      "description": "Use esse campo se o seu video já está hospedado em algum sistema na internet",
+      "fields": {
+        "videoUrls": {
+          "type": "file/url",
+          "formFieldMultiple": true,
+          "formFieldAttributes": {
+            "label": "Vídeos externos",
+            "placeholder": null,
+            "help": null
+          }
+        }
+      }
+    },
+    "videoGroup": {
+      "type": "field-group",
+      "title": "Enviar vídeo",
+      "description": "Use esse campo se o vídeo estiver no computador e deseja enviar para o site",
+      "fields": {
+        "videos": {
+          "type": "file/video",
+          "formFieldMultiple": false,
+          "formFieldAttributes": {
+            "label": "Vídeo",
+            "placeholder": null,
+            "help": null
+          }
+        }
+      }
+    }
+  },
+  "actions": {
+    "previus": {
+      "type": "submit",
+      "defaultValue": "previus",
+      "formFieldAttributes": {
+        "class": "btn btn-default",
+        "label": "Voltar",
+        "placeholder": null,
+        "help": null
+      }
+    },
+    "next": {
+      "type": "submit",
+      "defaultValue": "next",
+      "formFieldAttributes": {
+        "class": "btn btn-primary",
+        "label": "Salvar e avançar",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  }
+}

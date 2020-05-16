@@ -1,0 +1,94 @@
+<div class="row content-view-record">
+
+  <!-- Blog Post Content Column -->
+  <div class="col-md-8 col-lg-8">
+
+    <!-- Blog Post -->
+
+    <!-- Title -->
+    <h1>{{data.title}}
+      {{#can permission='update_content' roleNames=req.userRoleNames}}
+        <a href="/admin/#/contents/{{data.id}}" class="btn btn-default">Editar</a>
+      {{/can}}
+    </h1>
+{{!--     <p class="content-publication-data">
+      <small>
+        <span class="glyphicon glyphicon-time"></span> Postado em {{we-date data.publishedAt "LL" locals=this}}
+        {{#if data.category.length}}- {{#each data.category}}{{this}}{{/each}}{{/if}}
+      </small>
+    </p> --}}
+
+    {{#if data.featuredImage}}
+      {{we-image data.featuredImage "banner" class="img-responsive img-thumbnail featured-image-findOne"}}
+    {{/if}}
+
+    <div class="content-body">{{{data.body}}}</div>
+
+    {{#if data.images.length}}
+      <hr>
+      <div class=" content-image-galery-sidebar">
+        <h4>Galeria de imagens</h4>
+        <div>{{we-fancybox-galery images=data.images id="postImageGalery" style="medium"}}</div>
+      </div>
+      <hr>
+    {{/if}}
+
+    {{#if data.allowComments}}
+      <hr>
+
+      <div class="content-comments">
+        <!-- Blog Comments -->
+        {{{comments modelName="content" modelId=data.id comments=data.metadata.comments count=data.metadata.commentCount locals=this}}}
+      </div>
+    {{/if}}
+
+    {{#region 'content'}}{{/region}}
+  </div>
+
+  <div class="col-md-4 col-lg-4">
+    <div class="sidebar-module">
+      <div class="panel panel-default">
+        <div class="panel-heading">Buscar conteúdo</div>
+        <div class="panel-body">
+          <form action="/content">
+            <div class="input-group">
+              <input type="text" name="title_contains" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+              </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {{{template 'content/share-block'}}}
+
+    {{#if data.tags.length}}
+      <div class="sidebar-module">
+        <div class="panel panel-default">
+          <div class="panel-heading">Tags</div>
+          <div class="panel-body">
+            {{we-terms data.tags vocabularyName="Tags"}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if data.attachment.length}}
+      <div class="well">
+        <h4>Arquivos</h4>
+        {{!-- files list galery --}}
+        {{#each data.attachment}}
+          <a href="{{urls.original}}" download><i class="fa fa-download" aria-hidden="true"></i> {{originalname}}</a>
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{{template 'partials/menu-sidebar'}}}
+
+    {{#region 'sidebar'}}{{/region}}
+  </div>
+</div>

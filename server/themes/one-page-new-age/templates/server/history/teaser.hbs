@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+ {{#if record.featuredImage}}
+    {{#link-to-record record=record}}
+      {{we-image record.featuredImage "large" width="100%"}}
+    {{/link-to-record}}
+  {{else}}
+    {{#if record.videoUrls}}
+      {{#each record.videoUrls}}
+        <a href="/history/{{../record.id}}">
+          {{render-url-video-thumbnail url=url width="100%"}}
+        </a>
+      {{/each}}
+    {{/if}}
+  {{/if}}
+
+  <div class="panel-body">
+    {{#link-to-record record=record}}
+      <h2 class="ht-title">
+        {{record.title}} {{#unless record.published}} <small><span class="label label-warning">Aguardando Publicação</span></small> {{/unless}}
+      </h2>
+    {{/link-to-record}}
+    <div class="ht-creator-meta">
+      {{#if record.historyDate}}
+        {{we-date record.historyDate 'DD/MM/YYYY'}}
+      {{/if}}
+      {{record.locationText}}
+    </div>
+
+    {{#ifCond locals.controller 'user'}}
+      <div class="ht-creator"></div>
+    {{else}}
+      {{#if record.publishAsAnonymous}}
+        <div class="ht-creator">
+          {{we-avatar id="0" style="thumbnail" class="ht-creator-avatar img-thumbnail"}}
+          <h6 class="ht-creator-displayName">Anônimo</h6>
+        </div>
+      {{else}}
+        {{#if record.creator.id}}
+          <div class="ht-creator">
+            <a href="/user/{{record.creator.id}}">
+              {{we-avatar id=record.creator.id style="thumbnail" class="ht-creator-avatar img-thumbnail"}}
+              <h6 class="ht-creator-displayName">{{record.creator.displayName}}</h6>
+              {{#if record.creator.locationText}}
+                <span class="ht-creator-location">{{record.creator.locationText}}</span>
+              {{/if}}
+            </a>
+          </div>
+        {{/if}}
+      {{/if}}
+    {{/ifCond}}
+  </div>
+</div>

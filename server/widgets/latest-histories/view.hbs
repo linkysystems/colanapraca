@@ -1,0 +1,39 @@
+<div class="container">
+  <h5 class="hh-subtitle">#Saúdeémeulugar</h5>
+
+  {{#if widget.records.length}}
+    <div id="carousel-hh" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-hh" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-hh" data-slide-to="1"></li>
+        <li data-target="#carousel-hh" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        {{#each widget.recordsC}}
+          <div class="item text-center {{#if @first}}active{{/if}}">
+            {{!-- <div class="row"> --}}
+              {{#each this}}
+                {{!-- <div class="col-md-4"> --}}
+                  <a href="/history/{{id}}">
+                    {{we-image featuredImage 'medium' class="hhc-image"}}
+                  </a>
+                {{!-- </div> --}}
+              {{/each}}
+            {{!-- </div> --}}
+          </div>
+        {{/each}}
+      </div>
+
+      <a class="left carousel-control" href="#carousel-hh" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-hh" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+  {{/if}}
+</div>

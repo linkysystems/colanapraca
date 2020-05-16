@@ -1,0 +1,13 @@
+<div class="well">
+  <h4>Buscar página</h4>
+  <form action="/content">
+    <div class="input-group">
+      <input type="text" name="title_contains" class="form-control" value="{{req.query.title_contains}}">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+          <span class="glyphicon glyphicon-search"></span>
+      </button>
+      </span>
+    </div>
+  </form>
+</div>

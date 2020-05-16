@@ -1,0 +1,38 @@
+{{#can permission='update_history_creator' roleNames=locals.req.userRoleNames}}
+  <div class="form-group {{#if error}}has-error has-feedback{{/if}}">
+    <label for="{{fieldId}}">{{{label}}} {{#ifCond field.allowNull false}}*{{/ifCond}}</label>
+    {{{field-help-error error}}}
+
+    <select id="{{fieldId}}" name="{{#if field.name}}{{field.fieldName}}{{else}}{{name}}{{/if}}"
+      class="form-control" {{{fieldAttrs}}}
+      {{#if field.formFieldMultiple}}multiple="multiple"{{/if}}>
+      {{#if values.users}}
+        <option value="{{values.users.id}}">{{values.users.displayName}}</option>
+      {{/if}}
+    </select>
+
+    <p class="help-block">{{{help}}}</p>
+    {{{field-help-error error}}}
+  </div>
+
+  <script>$(document).ready(function() {
+    we.components.selectQuery.init('#{{fieldId}}', {
+      searchField: 'q',
+      cache: true,
+      url: function () {
+        return '/user';
+      },
+      processResults: function (data, params) {
+        if (!data || !data.user) return {};
+        return {
+          results: data.user.map(function(r, i) {
+            return {
+              text: '['+r.id+'] '+( r.displayName || r.username || r.id) + ' - '+ r.email,
+              id: r.id
+            };
+          })
+        };
+      }
+    });
+  });</script>
+{{/can}}

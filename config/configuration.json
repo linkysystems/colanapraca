@@ -1,0 +1,162 @@
+{
+  "roles": {
+    "administrator": {
+      "name": "administrator",
+      "permissions": [],
+      "canAddInUsers": true,
+      "isSystemRole": true
+    },
+    "authenticated": {
+      "name": "authenticated",
+      "permissions": [
+        "findOne_group",
+        "find_group",
+        "create_group",
+        "find_post",
+        "create_post",
+        "upload_image",
+        "find_image",
+        "upload_file",
+        "find_file",
+        "find_user",
+        "find_comment",
+        "create_comment",
+        "find_content",
+        "find_slideshow",
+        "find_slide",
+        "find_event",
+        "find_news",
+        "find_term",
+        "find_vocabulary",
+        "create_contact_message",
+        "find_group.post",
+        "use_follow",
+        "find_d-form",
+        "use_flag",
+        "find_history",
+        "create_history",
+        "view_dashboard",
+        "find_url-alia",
+        "find_simple-event",
+        "find_video",
+        "upload_gdrive_video",
+        "find_audio",
+        "upload_gdrive_audio",
+        "find_contributor"
+      ],
+      "isSystemRole": true
+    },
+    "unAuthenticated": {
+      "name": "unAuthenticated",
+      "permissions": [
+        "find_group",
+        "find_post",
+        "find_image",
+        "find_file",
+        "find_group.post",
+        "find_user",
+        "find_content",
+        "find_slideshow",
+        "find_slide",
+        "find_term",
+        "find_vocabulary",
+        "find_comment",
+        "find_event",
+        "find_d-form",
+        "find_news",
+        "create_contact_message",
+        "find_history",
+        "view_dashboard",
+        "find_url-alia",
+        "find_simple-event",
+        "find_video",
+        "find_audio",
+        "create_history",
+        "find_contributor"
+      ],
+      "isSystemRole": true
+    },
+    "owner": {
+      "name": "owner",
+      "permissions": [
+        "update_comment",
+        "update_post",
+        "delete_comment",
+        "delete_post",
+        "update_user",
+        "update_history",
+        "delete_video",
+        "delete_audio",
+        "access_history_unpublished"
+      ],
+      "isSystemRole": true
+    },
+    "groupMember": {
+      "name": "groupMember",
+      "isSystemRole": true,
+      "permissions": [
+        "find_group",
+        "find_post",
+        "create_post_in_group"
+      ]
+    },
+    "groupManager": {
+      "name": "groupManager",
+      "isSystemRole": true,
+      "permissions": [
+        "update_group",
+        "find_group",
+        "delete_group",
+        "manage_group",
+        "find_group_member",
+        "post_highlight",
+        "create_post_in_group",
+        "update_post_in_group",
+        "delete_post_in_group"
+      ]
+    },
+    "team_member": {
+      "name": "Membro da equipe",
+      "canAddInUsers": true
+    },
+    "editor": {
+      "name": "editor",
+      "canAddInUsers": true,
+      "permissions": [
+        "upload_image",
+        "upload_file",
+        "update_comment",
+        "manage_all_comments",
+        "find_content",
+        "create_content",
+        "update_content",
+        "delete_content",
+        "access_contents_unpublished",
+        "find_slideshow",
+        "find_slide",
+        "update_slide",
+        "delete_slide",
+        "create_event",
+        "update_event",
+        "create_news",
+        "update_news",
+        "delete_news",
+        "create_term",
+        "update_term",
+        "delete_term",
+        "find_url-alia",
+        "create_url-alia",
+        "update_url-alia",
+        "create_simple-event",
+        "update_simple-event",
+        "create_slide",
+        "update_slide",
+        "update_vocabulary",
+        "update_term",
+        "update_email-template",
+        "publish_history",
+        "update_history"
+      ]
+    }
+  }
+}

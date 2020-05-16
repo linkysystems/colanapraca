@@ -1,0 +1,16 @@
+{{#if widget.records.length}}
+  <div class="hmfc-list">
+    {{#each widget.records}}
+      <div class="hmfc-item">
+        <a href="{{linkPermanent}}" class="hmfc-link">
+          {{#if featuredImage.length}}
+            {{we-image featuredImage 'medium' class="hmfc-featuredImage img-thumbnail"}}
+          {{else}}
+            <img src="/public/project/placeholder.jpg" />
+          {{/if}}
+          <h4 class="hmfc-title">{{we-strip-tags text=title maxLength=50}}</h4>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}

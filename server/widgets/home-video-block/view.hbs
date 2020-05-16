@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h3>{{widget.configuration.text}}</h3>
+      <a class="btn btn-default" href="{{widget.configuration.linkUrl}}">{{widget.configuration.linkText}}</a>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      {{#if widget.configuration.urlVideo}}
+        <div class="embed-responsive embed-responsive-16by9">
+          {{{video-player widget.configuration.urlVideo class="embed-responsive-item"}}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

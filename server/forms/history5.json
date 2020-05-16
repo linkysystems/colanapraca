@@ -1,0 +1,50 @@
+{
+  "method": "post",
+
+  "fields": {
+    "body": {
+      "type": "history-required-midia"
+    },
+
+    "creatorId": {
+      "type": "hcreator",
+      "defaultValue": false,
+      "formFieldAttributes": {
+        "label": "Autor da história",
+        "placeholder": null,
+        "help": "Use esse campo para alterar o autor da história"
+      }
+    },
+
+    "publishAsAnonymous": {
+      "type": "boolean",
+      "defaultValue": false,
+      "formFieldAttributes": {
+        "label": "Publicar como Anônimo <br><small>Na modalidade Anônimo, apenas ‘Município’, ‘Ocupação’ e o ‘Título da história’ serão publicados</small>",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  },
+  "actions": {
+    "previus": {
+      "type": "submit",
+      "defaultValue": "previus",
+      "formFieldAttributes": {
+        "class": "btn btn-default",
+        "label": "Voltar",
+        "placeholder": null,
+        "help": null
+      }
+    },
+    "saveAndView": {
+      "type": "submit",
+      "defaultValue": "saveAndView",
+      "formFieldAttributes": {
+        "label": "Salvar e ver",
+        "placeholder": null,
+        "help": null
+      }
+    }
+  }
+}

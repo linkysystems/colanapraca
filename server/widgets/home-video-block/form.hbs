@@ -1,0 +1,29 @@
+<form name="widget-form-{{type}}">
+  <div class="form-group">
+    <label for="widget-form-{{type}}-text">Título</label>
+    <input name="text" value="{{configuration.text}}" type="text" class="form-control" id="widget-form-{{type}}-text">
+  </div>
+  <div class="form-group">
+    <label for="widget-form-{{type}}-linkUrl">Url do link</label>
+    <input name="linkUrl" value="{{configuration.linkUrl}}" type="text" class="form-control" id="widget-form-{{type}}-linkUrl">
+  </div>
+  <div class="form-group">
+    <label for="widget-form-{{type}}-linkText">Texto do link</label>
+    <input name="linkText" value="{{configuration.linkText}}" type="text" class="form-control" id="widget-form-{{type}}-linkText">
+  </div>
+  <div class="form-group">
+    <label for="widget-form-{{type}}-urlVideo">Url do vídeo</label>
+    <input name="urlVideo" value="{{configuration.urlVideo}}" type="text" class="form-control" id="widget-form-{{type}}-urlVideo">
+  </div>
+
+  {{{controllFields}}}
+
+  {{#if id}}
+    <input type="hidden" name="id" value="{{id}}">
+    <button type="submit" class="btn btn-primary">{{t 'Save'}}</button>
+    <button type="submit" data-dismiss="modal" class="btn btn-default">{{t 'Cancel'}}</button>
+  {{else}}
+    <button type="submit" class="btn btn-primary">{{t 'Add'}}</button>
+    <button type="submit" data-dismiss="modal" class="btn btn-default">{{t 'Cancel'}}</button>
+  {{/if}}
+</form>

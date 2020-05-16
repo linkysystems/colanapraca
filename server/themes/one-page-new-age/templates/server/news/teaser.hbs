@@ -1,0 +1,26 @@
+<div class="thumbnail news-teaser">
+  {{#if record.featuredImage}}
+    {{#link-to-record record=record}}
+      {{we-image record.featuredImage "large"}}
+    {{/link-to-record}}
+  {{/if}}
+  <div class="caption">
+    <div class="content-publication-data">
+      <small>
+        <span class="glyphicon glyphicon-time"></span> Publicado em {{we-date record.publishedAt "LL" locals=this}}
+        {{#if record.category.length}}- {{#each record.category}}{{this}}{{/each}}{{/if}}
+      </small>
+    </div>
+
+    <h3>
+      {{#link-to-record record=record}}
+        {{record.title}} {{#unless record.published}} <small><span class="label label-warning">Despublicado</span></small> {{/unless}}
+      {{/link-to-record}}
+    </h3>
+    <p>{{record.about}}</p>
+
+    <div class="news-read-more">
+      <a href="{{record.linkPermanent}}" class="btn btn-sm btn-default" role="button">Ler mais</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="d-form-title">Ficha de Inscrição</h2>
+    {{#if successMessage}}
+      <div class="alert alert-success" role="alert">{{successMessage}}</div>
+    {{else}}
+      {{{form 'ev1' data validationErrors}}}
+    {{/if}}
+  </div>
+</div>

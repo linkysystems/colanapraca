@@ -1,0 +1,69 @@
+{
+  "method": "post",
+
+  "fields": {
+    "cellphone": {
+      "type": "phone/cell",
+      "allowNull": false
+    },
+    "phone": {
+      "type": "phone/cell",
+      "allowNull": false
+    },
+    "cpf": {
+      "type": "gov-br/cpf",
+      "allowNull": true
+    },
+    "passaporte": {
+      "type": "gov-br/passaporte",
+      "allowNull": true
+    },
+    "estrangeiro": {
+      "type": "gov-br/brasileiro-seletor",
+      "allowNull": false
+    },
+    "locationGroup": {
+      "type": "field-group",
+      "title": "Localização",
+      "description": "Onde você mora/reside?",
+
+      "fields": {
+        "country": {
+          "type": "hidden",
+          "defaultValue": "BR",
+          "allowNull": false,
+          "formFieldAttributes": {
+            "label": null,
+            "placeholder": null,
+            "help": null
+          }
+        },
+        "locationState": {
+          "type": "location/state",
+          "allowNull": false,
+          "formCountryFieldName": "country",
+          "formFieldAttributes": {
+            "label": "Estado",
+            "placeholder": null,
+            "help": "Estado onde você reside"
+          }
+        },
+        "city": {
+          "type": "location/city",
+          "allowNull": false,
+          "formStateFieldName": "locationState",
+          "formFieldAttributes": {
+            "label": "Cidade",
+            "placeholder": null,
+            "help": "Cidade onde você reside"
+          }
+        }
+      }
+    }
+  },
+  "actions": {
+    "salvar": {
+      "type": "submit"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div id="weAdminBar">
+  <div class="container">
+    <ul class="nav navbar-left">
+      <li>
+        <a href="/history/create" class="main-menu-history-create-link">
+          <span class="glyphicon glyphicon-plus"></span> Contar uma história
+        </a>
+      </li>
+    </ul>
+
+    {{#if req.user.id}}
+      {{#if menuAuthenticated}}
+        <ul class="nav navbar-right">
+          <li>
+            <a href="/notification" class="main-menu-notification-link">
+              <span class="glyphicon glyphicon-bell"></span>
+              <span class="main-menu-link-notification-count badge"></span>
+              <span class="main-menu-notification-text">{{t 'notification.find'}}</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">
+              Olá, {{req.user.displayName}} {{we-avatar id=req.user.id style='thumbnail' width="18px"}}
+            </a>
+            {{we-menu menuAuthenticated class="dropdown-menu"}}
+          </li>
+        </ul>
+      {{else}}{{we-menu userMenu class="nav navbar-right"}}
+      {{/if}}
+    {{else}}
+      <ul class="nav navbar-right">
+        <li>
+          <a href="/login" class="">
+            <span class="glyphicon glyphicon-log-in"></span> Entrar
+          </a>
+        </li>
+        <li>
+          <a href="/signup" class="">
+            <span class="glyphicon glyphicon-plus"></span> Registrar
+          </a>
+        </li>
+      </ul>
+    {{/if}}
+  </div>
+</div>
+<div id="afterWeadmin"></div>

@@ -1,0 +1,18 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li><a href="/group">Grupos</a></li>
+  <li><a href="/group/{{group.id}}">{{we-strip-tags text=group.name maxLength=40}}</a></li>
+  <li class="active">Postagens</li>
+</ol>
+
+<div class="row group-posts">
+  <div class="col-lg-12">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="col-md-8 col-lg-9">
+    {{template 'post/find' locals=this}}
+  </div>
+  <div class="col-md-4 col-lg-3">
+    {{template 'group/sidebar' locals=this}}
+  </div>
+</div>

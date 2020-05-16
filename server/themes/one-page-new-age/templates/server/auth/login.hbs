@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="
+    col-xs-offset-0 col-xs-12
+    col-sm-offset-2 col-sm-8
+    col-md-offset-3 col-md-6
+    col-lg-offset-4 col-lg-4">
+    {{#unless req.user.id}}
+      <h1>Entrar no sistema / login</h1>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active">
+          {{#link-to 'auth.login'}}{{t 'Login'}}{{/link-to}}
+        </li>
+        <li role="presentation">
+          {{#link-to 'auth.signup'}}{{t 'Register'}}{{/link-to}}
+        </li>
+        <li role="presentation">
+          {{#link-to 'auth.forgotPassword'}}{{t 'auth.forgot-password'}}{{/link-to}}
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="social-logins text-center">
+          <div class="btn-group btn-group-facebook">
+            <a class='btn btn-primary disabled'>
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a class='btn btn-primary btn-fb-link' href='/auth/facebook'>Entrar com Facebook</a>
+          </div>
+          <div class="btn-group btn-group-google">
+            <a class='btn btn-danger disabled'>
+              <i class="fa fa-google"></i>
+            </a>
+            <a class='btn btn-danger btn-google-link' href='/auth/google'>Entrar com Google</a>
+          </div>
+        </div>
+        <div class="login-with-email">
+          <div class="login-with-email-title">Ou use o seu CPF e senha:</div>
+          {{{form 'login' user}}}
+        </div>
+      </div>
+    {{else}}
+      <p>{{{t 'auth.login.authenticated.msg'}}}</p>
+    {{/unless}}
+  </div>
+</div>

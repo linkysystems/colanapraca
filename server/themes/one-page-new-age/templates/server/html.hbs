@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{locale}}">
+<head>
+  <title>
+    {{title}} {{#if title}}|{{/if}}
+    {{#if req.we.systemSettings.siteName}}
+      {{req.we.systemSettings.siteName}}
+    {{else}}
+      {{req.we.config.appName}}
+    {{/if}}
+  </title>
+  {{we-event event="we-html-head-start"}}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  {{#if _csrf}}<meta name="csrf-token" content="{{_csrf}}" />{{/if}}
+
+  {{#if req.we.systemSettings.iconUrl}}
+    <link rel="shortcut icon" href="{{req.we.systemSettings.iconUrl}}">
+  {{else}}
+    <link rel="shortcut icon" href="/public/project/favicon.ico">
+  {{/if}}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+  {{{render-metadata-tags}}}
+  {{{render-stylesheet-tags}}}
+  {{{render-javascript-tags 'header'}}}
+
+  {{we-event event="we-html-head-end"}}
+</head>
+<body id="page-top" class="body-{{controller}}-{{action}} {{#each req.userRoleNames}}ur-{{this}} {{/each}} {{iframeClass}}">
+
+{{!--   <div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;">
+    <ul id="menu-barra-temp" style="list-style:none;">
+      <li style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED"><a href="http://brasil.gov.br" style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo Brasileiro</a></li>
+      <li><a style="font-family:sans,sans-serif; text-decoration:none; color:white;" href="http://epwg.governoeletronico.gov.br/barra/atualize.html">Atualize sua Barra de Governo</a></li>
+    </ul>
+  </div> --}}
+
+  {{{template 'partials/fb-lib'}}}
+
+  {{we-event event="we-html-body-start"}}
+  {{{template 'partials/header'}}}
+  {{{layoutHtml}}}
+  {{{template 'partials/footer'}}}
+  {{we-event event="we-html-body-end"}}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+  <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+</body>
+</html>
