@@ -17,7 +17,7 @@ let configs = {
       }
     },
     dev: {
-      uri: 'mysql://project:project@127.0.0.1:9506/project'
+      uri: process.env.DATABASE_URL || 'mysql://project:project@127.0.0.1:9506/project'
     },
     test: {
       dialect: 'sqlite',
