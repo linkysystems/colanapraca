@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   appName: 'Site',
-  subtitle: 'Nome do site',
+  subtitle: 'Cola na praça',
   systemSettingsPubSubStrategy: 'redis',
 
   // queryDefaultLimit: 9,
