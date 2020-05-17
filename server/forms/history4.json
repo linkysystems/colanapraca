@@ -17,22 +17,6 @@
           }
         }
       }
-    },
-    "audioGroup": {
-      "type": "field-group",
-      "title": "Upload",
-      "description": "Use esse campo se o audio estiver em seu computador",
-      "fields": {
-        "audios": {
-          "type": "file/audio",
-          "formFieldMultiple": true,
-          "formFieldAttributes": {
-            "label": "Audio",
-            "placeholder": null,
-            "help": null
-          }
-        }
-      }
     }
   },
   "actions": {

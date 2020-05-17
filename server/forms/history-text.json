@@ -8,7 +8,7 @@
       "formFieldType": "html",
       "formFieldHeight": 300,
       "formFieldAttributes": {
-        "label": "Escreva aqui sua história",
+        "label": "Texto livre. Use para descrever seu compartilhamento",
         "placeholder": null,
         "help": null
       }

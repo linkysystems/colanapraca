@@ -138,19 +138,23 @@ module.exports = {
       post: true,
       content: true,
       article: true,
-      cfnews: true
+      cfnews: true,
+      history: true,
+      'web-link': true
     }
   },
 
   flag: {
     models: {
-      post: true
+      post: true,
+      'web-link': true
     }
   },
 
   follow: {
     models: {
-      post: true
+      post: true,
+      'web-link': true
     }
   },
 

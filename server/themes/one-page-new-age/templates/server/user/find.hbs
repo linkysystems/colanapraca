@@ -37,7 +37,7 @@
     </div>
   {{/we-grid}}
 
-  {{#unless data.length}}Não temos usuários com histórias públicadas nessa lista.{{else}}
+  {{#unless data.length}}Não temos usuários com Compartilhamentos públicadas nessa lista.{{else}}
     {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
   {{/unless}}
 </div>

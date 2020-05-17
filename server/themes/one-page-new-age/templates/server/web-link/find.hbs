@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li class="active">Links</li>
+</ol>
+
+{{{template 'web-link/header'}}}
+<br>
+<div class="web-link-find-list">
+  <div class="row">
+    <div class="col-md-3">
+      {{{web-links-filter req=req}}}
+    </div>
+    <div class="col-md-9">
+      {{#each data}}
+        {{render-record-teaser modelName='web-link' record=this locals=..}}
+      {{else}}
+        <p>{{t 'web-link.find.empty'}}</p>
+      {{/each}}
+
+      <div class="clearfix">
+        {{paginate count=metadata.count limit=query.limit currentPage=query.page req=req}}
+      </div>
+    </div>
+  </div>
+</div>

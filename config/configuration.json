@@ -42,7 +42,11 @@
         "upload_gdrive_video",
         "find_audio",
         "upload_gdrive_audio",
-        "find_contributor"
+        "find_contributor",
+        "create_link",
+        "find_link",
+        "find_web-link",
+        "create_web-link"
       ],
       "isSystemRole": true
     },
@@ -72,7 +76,9 @@
         "find_video",
         "find_audio",
         "create_history",
-        "find_contributor"
+        "find_contributor",
+        "find_link",
+        "find_web-link"
       ],
       "isSystemRole": true
     },
@@ -87,7 +93,9 @@
         "update_history",
         "delete_video",
         "delete_audio",
-        "access_history_unpublished"
+        "access_history_unpublished",
+        "update_link",
+        "delete_link"
       ],
       "isSystemRole": true
     },

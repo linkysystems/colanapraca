@@ -16,22 +16,6 @@
           }
         }
       }
-    },
-    "videoGroup": {
-      "type": "field-group",
-      "title": "Enviar vídeo",
-      "description": "Use esse campo se o vídeo estiver no computador e deseja enviar para o site",
-      "fields": {
-        "videos": {
-          "type": "file/video",
-          "formFieldMultiple": false,
-          "formFieldAttributes": {
-            "label": "Vídeo",
-            "placeholder": null,
-            "help": null
-          }
-        }
-      }
     }
   },
   "actions": {

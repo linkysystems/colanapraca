@@ -1,0 +1,22 @@
+<div class="container">
+  {{{template 'web-link/header'}}}
+  <br>
+  <div class="web-link-find-list">
+    <div class="row">
+      <div class="col-md-3">
+        {{{web-links-filter req=locals.req}}}
+      </div>
+      <div class="col-md-9">
+        {{#each widget.records}}
+          {{render-record-teaser modelName='web-link' record=this locals=../locals}}
+        {{else}}
+          <p>{{t 'web-link.find.empty'}}</p>
+        {{/each}}
+
+        <div class="clearfix">
+          <a href="/web-hook">Ver mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<ol class="breadcrumb">
+  <li><a href="/">Início</a></li>
+  <li><a href="/web-link">Links</a></li>
+  <li class="active">{{we-strip-tags text=data.title maxLength=30}}</li>
+</ol>
+
+
+{{{template 'web-link/header'}}}
+<br>
+<div class="web-link-find-list">
+  <div class="row">
+    <div class="col-md-3">
+      {{{web-links-filter req=req}}}
+    </div>
+    <div class="col-md-9">
+      {{render-record-teaser modelName='web-link' record=data locals=this}}
+    </div>
+  </div>
+</div>

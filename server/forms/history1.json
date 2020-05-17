@@ -6,7 +6,7 @@
       "type": "text",
       "allowNull": false,
       "formFieldAttributes": {
-        "label": "Dê um nome à sua história",
+        "label": "Dê um nome à seu compartilhamento",
         "placeholder": null,
         "help": null
       }
@@ -15,7 +15,7 @@
     "keywordsGroup": {
       "type": "field-group",
       "title": "Palavras-chave",
-      "description": "Selecione algumas palavras relácionadas com a sua história",
+      "description": "Selecione algumas palavras relácionadas",
 
       "fields": {
         "category": {
@@ -25,9 +25,9 @@
           "formFieldMultiple": true,
           "onlyLowercase": false,
           "formFieldAttributes": {
-            "label": "Eixos",
+            "label": "Categoria",
             "placeholder": null,
-            "help": "Selecione um eixo relácionado com sua história"
+            "help": "Selecione uma categoria para o conteúdo compartilhado"
           }
         },
         "tags": {
@@ -39,7 +39,7 @@
           "formFieldAttributes": {
             "label": "Assuntos relacionados",
             "placeholder": null,
-            "help": "Escreva ou selecione no máximo 3 assuntos relacionados à história"
+            "help": "Escreva ou selecione no máximo 3 assuntos relacionados"
           }
         }
       }
@@ -49,7 +49,7 @@
       "type": "date",
       "allowNull": true,
       "formFieldAttributes": {
-        "label": "Principal data da história",
+        "label": "Principal data",
         "placeholder": null,
         "help": null
       }
@@ -58,13 +58,13 @@
     "locationGroup": {
       "type": "field-group",
       "title": "Localização",
-      "description": "Local mais relevante onde a história aconteceu",
+      "description": "Local mais relevante onde aconteceu",
 
       "fields": {
         "country": {
           "type": "hidden",
           "defaultValue": "BR",
-          "allowNull": false,
+          "allowNull": true,
           "formFieldAttributes": {
             "label": null,
             "placeholder": null,
@@ -73,22 +73,22 @@
         },
         "locationState": {
           "type": "location/state",
-          "allowNull": false,
+          "allowNull": true,
           "formCountryFieldName": "country",
           "formFieldAttributes": {
             "label": "Estado",
             "placeholder": null,
-            "help": "Estado do Brasil onde a história aconteceu"
+            "help": "Estado do Brasil onde aconteceu"
           }
         },
         "city": {
           "type": "location/city",
-          "allowNull": false,
+          "allowNull": true,
           "formStateFieldName": "locationState",
           "formFieldAttributes": {
             "label": "Cidade",
             "placeholder": null,
-            "help": "Cidade onde a história aconteceu"
+            "help": "Cidade onde aconteceu"
           }
         }
       }

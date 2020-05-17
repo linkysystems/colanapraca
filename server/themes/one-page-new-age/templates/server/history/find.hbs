@@ -1,14 +1,13 @@
 {{!-- <ol class="breadcrumb">
   <li><a href="/">Início</a></li>
-  <li class="active">Histórias</li>
+  <li class="active">Compartilhamentos</li>
 </ol>
  --}}
 <div class="loader"></div>
 
 <div class="history-findAll">
   <div class="history-findAll-header">
-    <h2 class="hfah-title">Vivências que viram histórias.
-      <br>{{metadata.completeCount}} histórias que inspiram.</h2>
+    <h2 class="hfah-title">Compartilhe, se emocione, se inspire e viva!</h2>
     <div class="history-search">
       <form class="form-inline">
         <div class="row">
@@ -149,7 +148,7 @@
   <div class="history-findAll-actions">
     <a href="/history/create" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Enviar</a>
     {{#if req.user.id}}
-      <a href="/user/{{req.user.id}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> Minhas histórias</a>
+      <a href="/user/{{req.user.id}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> Meus conteúdos</a>
     {{/if}}
   </div>
 
@@ -160,7 +159,7 @@
       </div>
     {{else}}
       <div class="col-md-12">
-        Não foi possível encontrar histórias para a lista.
+        Não foi possível encontrar conteúdos para a lista.
       </div>
     {{/each}}
   </div>

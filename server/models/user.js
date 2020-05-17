@@ -109,7 +109,7 @@ module.exports = function UserModel(we) {
           if (
             this.get('email') &&
             this.get('displayName') &&
-            this.get('cpf') &&
+            // this.get('cpf') &&
             this.get('cellphone') &&
             this.get('country') &&
             this.get('locationState') &&

@@ -12,7 +12,7 @@
       "formFieldAttributes": {
         "label": "Autor da história",
         "placeholder": null,
-        "help": "Use esse campo para alterar o autor da história"
+        "help": "Use esse campo para alterar o autor"
       }
     },
 
@@ -20,7 +20,7 @@
       "type": "boolean",
       "defaultValue": false,
       "formFieldAttributes": {
-        "label": "Publicar como Anônimo <br><small>Na modalidade Anônimo, apenas ‘Município’, ‘Ocupação’ e o ‘Título da história’ serão publicados</small>",
+        "label": "Publicar como Anônimo <br><small>Na modalidade Anônimo, apenas ‘Município’, ‘Ocupação’ e o ‘Título’ serão publicados</small>",
         "placeholder": null,
         "help": null
       }

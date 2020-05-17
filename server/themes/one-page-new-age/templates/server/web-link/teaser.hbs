@@ -1,0 +1,10 @@
+<div class="web-link-item">
+  <div class="social-interaction-links">
+    {{{flag-like modelName='web-link' modelId=record.id isFlagged=record.metadata.isFlagged count=record.metadata.flagCount locals=locals}}}
+  </div>
+  <h3><a href="{{record.url}}" target="_blank">{{record.title}}</a></h3>
+  <p>{{record.description}}</p>
+  <div class="web-link-by">
+    Por <strong>{{record.creator.displayName}}</strong>
+  </div>
+</div>

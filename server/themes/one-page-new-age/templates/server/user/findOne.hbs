@@ -2,7 +2,7 @@
 
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active">
-    <a href="#thistories" aria-controls="thistories" role="tab" data-toggle="tab">Histórias</a>
+    <a href="#thistories" aria-controls="thistories" role="tab" data-toggle="tab">Compartilhamentos</a>
   </li>
   {{#if data.biography}}
     <li role="presentation">
@@ -20,7 +20,7 @@
             {{render-record-teaser modelName='history' record=this locals=..}}
           </div>
         {{else}}
-          <div class="col-md-12">Nenhuma história públicada.</div>
+          <div class="col-md-12">Nenhuma compartilhamento públicado.</div>
         {{/each}}
       </div>
       <div class="clearfix">

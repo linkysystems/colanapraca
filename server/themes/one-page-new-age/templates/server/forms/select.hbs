@@ -1,0 +1,17 @@
+<div class="form-group {{#if error}}has-error has-feedback{{/if}}">
+  <label for="{{fieldId}}">{{{label}}} {{#ifCond field.allowNull false}}*{{/ifCond}}</label>
+  <select class="form-control" id="{{fieldId}}" name="{{name}}">
+    {{#if field.allowNull}}
+      <option value="" selected="selected">{{{placeholder}}}</option>
+    {{/if}}
+    {{#each field.fieldOptions}}
+      {{#ifCond @key ../value}}
+        <option selected="selected" value="{{@key}}">{{t this}}</option>
+      {{else}}
+        <option value="{{@key}}">{{t this}}</option>
+      {{/ifCond}}
+    {{/each}}
+  </select>
+  <p class="help-block">{{t help}}</p>
+  {{{field-help-error error}}}
+</div>

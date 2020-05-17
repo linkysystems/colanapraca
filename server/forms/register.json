@@ -15,10 +15,6 @@
       "defaultValue": "",
       "allowNull": false
     },
-    "cpf": {
-      "type": "gov-br/cpf",
-      "defaultValue": ""
-    },
     "passaporte": {
       "type": "gov-br/passaporte",
       "allowNull": true

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="search-web-link-form">
+      <form class="form-inline" action="/web-link">
+        <label class="sr-only" for="inlineFormInputName2">Busca</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="formWebLinkSearchQuery" name="title" placeholder="Busque pode links aqui...">
+
+        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="create-weblink pull-right">
+      {{#if req.user}}
+        <a href="/web-link/create" class="btn btn-default">Enviar link</a>
+      {{else}}
+        <a href="/login?redirectTo=/web-link/create" class="btn btn-warning btn-sm">Logar para enviar link</a>
+      {{/if}}
+    </div>
+  </div>
+</div>

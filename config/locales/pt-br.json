@@ -703,7 +703,7 @@
   "form-link-title": "Title",
   "form-link-weight": "Peso",
   "form-link-userRole": "Perfil de usuário",
-  "form-login-email": "CPF",
+  "form-login-email": "E-mail",
   "form-login-password": "senha",
   "form-login-persistent": "Permanecer logado",
   "form-login-submit": "Enviar",
@@ -1311,8 +1311,8 @@
   "form-helper-complete-registration-passaporte": "Preencha o passaporte apenas se não possuír o CPF",
   "form-complete-registration-estrangeiro": "Sou estrangeiro e não possuo CPF",
   "form-complete-registration-salvar": "Salvar",
-  "history.create": "Registrar história",
-  "history.find": "Histórias",
+  "history.create": "Compartilhar",
+  "history.find": "Compartilhamentos",
   "video.remove": "Remover vídeo",
   "file.video.select.btn": "Adicionar vídeo",
   "video.selector": "Adicionar vídeo",
@@ -1323,7 +1323,7 @@
   "audio.selector": "Adicionar audio",
   "audio.uploader.title": "Envio de audio",
   "audio.upload.selector.btn": "Clique para enviar",
-  "history.delete.confirm.msg": "Tem certeza que deseja deletar essa história?<br>Essa ação não é permanente.",
+  "history.delete.confirm.msg": "Tem certeza que deseja deletar esse compartilhamento?<br>Essa ação não é permanente.",
   "certification.userCertifications": "Certificados do usuário",
   "certification.user.empty": "Você não tem certificados nesse sistema",
   "download.as.pdf": "Baixar como PDF",
@@ -1335,5 +1335,7 @@
   "url.remove": "Remover",
   "Enable": "Ativar",
   "Block": "Bloquear",
-  "form-user-atividade": "Ocupação Profissional"
+  "form-user-atividade": "Ocupação Profissional",
+  "web-link.find": "Links",
+  "web-link.find.empty": "Sem links nesta lista, tente mudar o filtro de busca."
 }

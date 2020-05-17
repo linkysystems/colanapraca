@@ -10,18 +10,6 @@
       "type": "phone/cell",
       "allowNull": false
     },
-    "cpf": {
-      "type": "gov-br/cpf",
-      "allowNull": true
-    },
-    "passaporte": {
-      "type": "gov-br/passaporte",
-      "allowNull": true
-    },
-    "estrangeiro": {
-      "type": "gov-br/brasileiro-seletor",
-      "allowNull": false
-    },
     "locationGroup": {
       "type": "field-group",
       "title": "Localização",

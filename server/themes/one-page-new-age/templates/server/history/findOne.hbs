@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
   <li><a href="/">Início</a></li>
-  <li><a href="/history">Histórias</a></li>
+  <li><a href="/history">Compartilhamentos</a></li>
   <li class="active">{{we-strip-tags text=data.title maxLength=30}}</li>
 </ol>
 
@@ -9,7 +9,7 @@
 <div class="row">
   <div class="col-md-9">
     {{#unless data.published}}
-      <div class="alert alert-warning" role="alert"><img class="pinion-image" src="/public/project/pinion-amarelo.png"> Sua história foi enviada com sucesso e encaminhada para a nossa triagem, em breve ela será publicada.</div>
+      {{!-- <div class="alert alert-warning" role="alert"><img class="pinion-image" src="/public/project/pinion-amarelo.png"> --}} Compartilhamento enviado com sucesso e encaminhado para a nossa triagem, em breve ele será publicado.</div>
     {{/unless}}
 
     <h1 class="history-title">{{data.title}}</h1>

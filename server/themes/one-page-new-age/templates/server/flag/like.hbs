@@ -1,0 +1,33 @@
+{{#if locals.req.user}}
+  {{#if isFlagged}}
+  <form class="unlike-form" action="/api/v1/unflag/{{modelName}}/{{modelId}}?flagType=like" method="post" data-we-modelName="{{modelName}}" data-we-modelId="{{modelId}}">
+    <input name="redirectTo" type="hidden" value="{{redirectTo}}">
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon">{{count}}</span>
+      <button class="btn btn-sm btn-default active">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      </button>
+    </div>
+
+  </form>
+  {{else}}
+  <form class="like-form" action="/api/v1/flag/{{modelName}}/{{modelId}}?flagType=like" method="post" data-we-modelName="{{modelName}}" data-we-modelId="{{modelId}}">
+    <input name="redirectTo" type="hidden" value="{{redirectTo}}">
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon">{{count}}</span>
+      <button class="btn btn-sm btn-default">
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      </button>
+    </div>
+  </form>
+  {{/if}}
+{{else}}
+  <form>
+    <div class="input-group input-group-sm disabled">
+      <span class="input-group-addon">{{count}}</span>
+      <button disabled class="disabled btn btn-sm btn-default"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+    </div>
+  </form>
+{{/if}}

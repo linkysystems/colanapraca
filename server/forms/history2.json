@@ -17,7 +17,7 @@
       "formFieldAttributes": {
         "label": "Imagens",
         "placeholder": null,
-        "help": "As imagens enviadas aqui serão exibidas em uma galeria de imagens da história"
+        "help": "As imagens enviadas aqui serão exibidas em uma galeria de imagens"
       }
     }
   },
