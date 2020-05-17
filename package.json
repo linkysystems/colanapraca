@@ -1,7 +1,7 @@
 {
   "name": "narrativas",
   "description": "Site com We.js",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "private": true,
   "main": "./app.js",
   "scripts": {
