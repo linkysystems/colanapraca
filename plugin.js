@@ -541,7 +541,8 @@ Atenciosamente,
       type: we.db.Sequelize.STRING(11),
       unique: true,
       allowNull: true,
-      formFieldType: 'gov-br/cpf',
+      // formFieldType: 'gov-br/cpf',
+      formFieldType: null,
       set(val) {
         if (val) {
           // remove a mascara de cpf ao setar o valor
@@ -560,7 +561,8 @@ Atenciosamente,
     we.db.modelsConfigs.user.definition.estrangeiro = {
       type: we.db.Sequelize.BOOLEAN,
       defaultValue: false,
-      formFieldType: 'gov-br/brasileiro-seletor',
+      // formFieldType: 'gov-br/brasileiro-seletor',
+      formFieldType: null,
       set(val) {
         if (!val) this.setDataValue('estrangeiro', null);
         if ( Number(val) )

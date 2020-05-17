@@ -15,15 +15,6 @@
       "defaultValue": "",
       "allowNull": false
     },
-    "passaporte": {
-      "type": "gov-br/passaporte",
-      "allowNull": true
-    },
-    "estrangeiro": {
-      "type": "gov-br/brasileiro-seletor",
-      "allowNull": false
-    },
-
     "gender": {
       "type": "select",
       "allowNull": true,
