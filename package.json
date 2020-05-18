@@ -8,7 +8,7 @@
     "session": "LOG_LV=verbose REDIS_URL=redis://127.0.0.1:9479/1 PORT=9400 node app.js --dev",
     "session-prod": "LOG_LV=verbose REDIS_URL=redis://127.0.0.1:9479/1 PORT=9400 node app.js --prod",
     "dropDB": "LOG_LV=verbose REDIS_URL=redis://127.0.0.1:9479/1 PORT=9400 we dropDB",
-    "watch": "supervisor -w lib,server,config,plugin.js,app.js app.js",
+    "watch": "supervisor -w lib,server,config,plugin.js,app.js -i server/themes app.js",
     "build": "LOG_LV=verbose REDIS_URL=redis://127.0.0.1:9479/1 PORT=9409 gulp build",
     "deploy": "git push prod master && git push prod master:prod",
     "dev": "node app.js --dev",

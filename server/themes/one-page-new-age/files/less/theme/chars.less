@@ -1,0 +1,54 @@
+@charMessageBg: #e0feff;
+
+.home-chars {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .char-message {
+    width: 390px;
+    float: right;
+    background-color: @charMessageBg;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+
+    .view-moree {
+      font-size: 16px;
+      text-decoration: underline;
+      color: #262151;
+    }
+  }
+
+  .home-char-img {
+    width: 300px;
+  }
+}
+
+.home-char-img-history {
+  width: 100px;
+  float: left;
+  position: absolute;
+}
+
+.char-message::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 14px solid @charMessageBg;
+  border-right: 14px solid transparent;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  right: -12px;
+  top: 23%;
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}

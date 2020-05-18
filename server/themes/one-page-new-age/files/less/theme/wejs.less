@@ -568,7 +568,6 @@ body.body-main-index {
   font-weight: bold;
 
   h1 {
-
     font-size: 30px;
     margin-top: 35vh;
     color: #fff;
@@ -586,4 +585,22 @@ body.body-main-index {
   height: 80vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.60);
+}
+
+
+@media (max-width: @screen-sm-max) {
+  .hfah-title {
+    font-size: 2.5rem;
+  }
+
+  .home-char-img-history {
+    width: 75px;
+    float: left;
+    position: relative;
+    margin-right: 8px;
+  }
+
+  .char-message::after {
+    display: none;
+  }
 }
