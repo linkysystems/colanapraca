@@ -8028,6 +8028,9 @@ body.body-main-index #region-content .widget.widget-slideshow .device-container 
   overflow: hidden;
   margin-bottom: 0px;
 }
+.history-category {
+  font-weight: bold;
+}
 .social-logins {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
