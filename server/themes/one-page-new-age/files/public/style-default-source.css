@@ -7454,6 +7454,9 @@ body.iframe-page-type footer {
   display: inline-block;
   float: right;
 }
+#weAdminBar .nav.navbar-left {
+  display: inline-block;
+}
 #weAdminBar .dropdown:hover .dropdown-menu {
   display: block;
   margin-top: 0;
@@ -8161,6 +8164,14 @@ body.body-main-index #region-content .widget.widget-slideshow .device-container 
   border-bottom: 14px solid transparent;
   right: -12px;
   top: 23%;
+}
+@media (max-width: 480px) {
+  .home-chars .char-message {
+    width: 100%;
+  }
+  .home-chars .home-char-img {
+    max-width: 100%;
+  }
 }
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
