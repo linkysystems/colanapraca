@@ -95,7 +95,8 @@
         "delete_audio",
         "access_history_unpublished",
         "update_link",
-        "delete_link"
+        "delete_link",
+        "delete_group.post"
       ],
       "isSystemRole": true
     },
@@ -105,7 +106,8 @@
       "permissions": [
         "find_group",
         "find_post",
-        "create_post_in_group"
+        "create_post_in_group",
+        "create_group.post"
       ]
     },
     "groupManager": {
@@ -120,7 +122,8 @@
         "post_highlight",
         "create_post_in_group",
         "update_post_in_group",
-        "delete_post_in_group"
+        "delete_post_in_group",
+        "create_group.post"
       ]
     },
     "team_member": {
