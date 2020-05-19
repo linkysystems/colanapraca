@@ -1337,5 +1337,21 @@
   "Block": "Bloquear",
   "form-user-atividade": "Ocupação Profissional",
   "web-link.find": "Links",
-  "web-link.find.empty": "Sem links nesta lista, tente mudar o filtro de busca."
+  "web-link.find.empty": "Sem links nesta lista, tente mudar o filtro de busca.",
+  "form-web.create": "Enviar link",
+  "form-web-link-url": "URL do link / endereço",
+  "form-placeholder-web-link-url": " ",
+  "form-helper-web-link-url": " ",
+  "form-web-link-url": "URL do link / endereço",
+  "form-placeholder-web-link-url": " ",
+  "form-helper-web-link-url": " ",
+  "form-web-link-title": "Título ou nome do link",
+  "form-placeholder-web-link-title": " ",
+  "form-helper-web-link-title": " ",
+  "form-web-link-description": "Pequena descrição sobre o conteúdo do link",
+  "form-placeholder-web-link-description": " ",
+  "form-helper-web-link-description": " ",
+  "form-web-link-category": "Categoria do link",
+  "form-placeholder-web-link-category": " ",
+  "form-helper-web-link-category": " "
 }
