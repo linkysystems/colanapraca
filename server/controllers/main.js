@@ -52,5 +52,27 @@ module.exports = {
     } else {
       res.ok();
     }
+  },
+
+  /**
+   * Health check router
+   * @param  {Object} req Express request
+   * @param  {Object} res Express request
+   * @api [get] /health
+   * description: "Get app health"
+   * responses:
+   *   "200":
+   *     description: "Return a simple online: true json data."
+   *     schema:
+   *       type: object
+   *       properties:
+   *         online:
+   *           type: boolean
+   *           example: true
+   */
+  health(req, res) {
+    res.send({
+      online: true
+    });
   }
 };
