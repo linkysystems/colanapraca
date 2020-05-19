@@ -8017,6 +8017,17 @@ body.body-main-index #region-content .widget.widget-slideshow .device-container 
   margin-left: 6px;
   padding-right: 4px;
 }
+.widget-latest-histories .thumbnail h3 {
+  font-size: 18px;
+  height: 38px;
+  overflow: hidden;
+}
+.widget-latest-histories .thumbnail p {
+  font-size: 16px;
+  height: 20px;
+  overflow: hidden;
+  margin-bottom: 0px;
+}
 .social-logins {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
